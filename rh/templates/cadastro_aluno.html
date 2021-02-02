@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="col-md-6">
+  <h6>Cadastre o aluno:</h6>
+</div>
+<div>
+  <form class="post-form" method="POST">
+    {% csrf_token %}
+    <div class=" col-md-6">
+      <label for="nome">Nome</label>
+      <input type="text" class="form-control">
+    </div>
+    <div class="col-md-6">
+      <label for="endereco">Endereço</label>
+      <input type="text" class="form-control">
+    </div>
+    <div class="col-md-6">
+      <label for="telefone">Telefone</label>
+      <input type="text" class="form-control">
+    </div>
+    <div class="col-md-6">
+      <label for="data_nascimento">Data de nascimento</label>
+      <input type="date" class="form-control">
+    </div>
+    <div class="col-md-6">
+      <label for="matricula">Matrícula</label>
+      <input type="text" class="form-control">
+    </div>
+    <div><br></div>
+    <div class="col-lg-5" style="text-align:center">
+      <button type="submit" class="btn btn-secondary" >Salvar</button>
+    </div>
+  </form>
+</div>
+
+{% endblock %}
