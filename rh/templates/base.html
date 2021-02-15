@@ -1,36 +1,131 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-        <link rel="stylesheet" href="{% static 'fa/css/all.min.css' %}">
-        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <style>
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color:gray;
+            }
+  
+            li {
+                float: left;
+            }
+            
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+            
+            li a:hover {
+                background-color: #111;
+            }
+
+            .active {
+                background-color: #776ec7;
+            }
+
+            .button {
+                background-color: gray;
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+                border-radius: 12px;
+                width: 95%;
+                }
+
+            .button:hover {
+                background-color: black;
+                }
+            
+            * {
+                box-sizing: border-box;
+                }
+
+            input[type=text], select, textarea {
+                width: 95%;
+                padding: 12px 20px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                resize: vertical;
+                margin: 8px 50px;
+                box-sizing: border-box;
+                }
+
+            input[type=date]{
+                margin: 8px 0px;
+            }
+
+            input[type=submit] {
+                background-color: gray;
+                color: white;
+                padding: 12px 20px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                float:right;
+                width: 50%;
+                margin: 8px 300px;
+                }
+
+            input[type=submit]:hover {
+                background-color: black;
+                }
+
+            .container {
+                border-radius: 5px;
+                background-color: #f2f2f2;
+                padding: 20px;
+                }
+
+            .col-25 {
+                float: left;
+                width: 20%;
+                margin-top: 6px;
+                }
+
+            .row:after {
+                content: "";
+                display: table;
+                clear: both;
+                }
+
+            label {
+                margin: 8px 50px;
+            }
+        </style>
+        
         <title>Sistema Escolar</title> 
     </head>
     <body>
-        <div>    
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="/inicio/">Sistema Escolar</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                        <a class="nav-item nav-link active" href="/inicio/">Início <span class="sr-only">(current)</span></a>
-                        <a class="nav-item nav-link" href="#">Aluno</a>
-                        <a class="nav-item nav-link" href="#">Professor</a>
-                        <a class="nav-item nav-link" href="#">Coordenador</a>
-                        <a class="nav-item nav-link" href="/rh/">RH</a>
-                        <a class="nav-item nav-link" href="#">Departamento de Registro</a>
-                    </div>
-                </div>
-            </nav>
+        <div>
+            <ul>
+                <li><a class="active" href="/inicio/">Início </a></li>
+                <li><a href="#">Aluno</a></li>    
+                <li><a href="#">Professor</a></li>
+                <li><a href="#">Coordenador</a></li>
+                <li><a href="/rh/">RH</a></li>    
+                <li><a href="#">Departamento de Registro</a></li>   
+            </ul>    
         </div>
         <div class="container">
-            <h5>Olá, RH</h5>
+            <h3>Olá, RH</h3>
         </div>
         {% block content %}
         {% endblock %}
